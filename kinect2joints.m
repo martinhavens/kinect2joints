@@ -80,7 +80,7 @@ if  sum(depthMetaData.IsBodyTracked) >0
 skeletonJoints = depthMetaData.JointPositions (:,:,:);
 %hold on;
 %Skeleton overlay
-for i = 6:9        %tracking from shoulder to hand only
+for i = 6:8        %tracking from shoulder to hand only
     %hold on;   
     %axis([0 3 0 3])
 for body = 1:nBodies
