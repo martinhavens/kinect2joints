@@ -1,27 +1,23 @@
-clear; clc;%JointPositions = matfile('dataPointsTesting.mat','JointPositions');
+clear; clc;
 JointPositionsStructure = load('dataPointsTesting','JointPositions')
-clear JointPositions
 JointPositions=JointPositionsStructure.JointPositions
-clear JointPositionsStructure
 
 
 %JointPositions is in the format  
-                      %1st column is x  %2nd column is y  %3rd column is z
+%1st column is x  %2nd column is y  %3rd column is z
 %1st row is shoulder   
 %2nd row is elbow
 %3rd row is wrist
-%4th row is hand
+% each page is one trigger
 
-% each page is one trigger (~0.9s)
-
-
-%datcesd=implementDataProcessing(JointPositions,1)
+%camera POV
+%+z is 
 
 
 
 
 
-function angles=pointsToAngles(TotalJoints4x3xTrig,linklength)
+function angles=pointsToAngles(TotalJoints4x3xTrig)
 
 trig=numel(TotalJoints4x3xTrig)/12;     %isolating the number of columns for counting triggers
 for j = 1 : trig
